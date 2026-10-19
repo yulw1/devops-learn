@@ -21,11 +21,11 @@ sudo sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sour
 sudo apt update
 ```
 
+ 
 
+![image-20261018172006994](./assets/image-20261018172006994.png)
 
-![image-20261018172006994](../../../../../../typoreImgs/image-20261018172006994.png)
-
-![image-20261018172027043](../../../../../../typoreImgs/image-20261018172027043.png)
+![image-20261018172027043](./assets/image-20261018172027043.png)
 
 
 
@@ -44,7 +44,7 @@ sudo apt update
 sudo apt install -y ca-certificates curl gnupg
 ```
 
-![image-20261018172910134](../../../../../../typoreImgs/image-20261018172910134.png)
+![image-20261018172910134](./assets/image-20261018172910134.png)
 
 *Verification:* 输出 `Setting up...` 且没有 `Err:` 报错，提示安装完成。
 
@@ -67,7 +67,7 @@ echo \
 
 *Verification:* 运行 `cat /etc/apt/sources.list.d/docker.list` 能看到正确的 `download.docker.com` 源配置。
 
-![image-20261018173208123](../../../../../../typoreImgs/image-20261018173208123.png)
+![image-20261018173208123](./assets/image-20261018173208123.png)
 
 **3.3. 一键安装 Docker 核心组件：**约 30 秒。
 
@@ -82,9 +82,9 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 
 *Verification:* 运行 `docker --version`，能够打印出版本号（如 `Docker version 27.x.x, build ...`）。
 
-![image-20261018173248504](../../../../../../typoreImgs/image-20261018173248504.png)
+![image-20261018173248504](./assets/image-20261018173248504.png)
 
-![image-20261018173359899](../../../../../../typoreImgs/image-20261018173359899.png)
+![image-20261018173359899](./assets/image-20261018173359899.png)
 
 
 
@@ -109,7 +109,7 @@ sudo docker run hello-world
 
 这里我出现了问题，Docker显示ok，但实际上并未启动
 
-![image-20261018174130455](../../../../../../typoreImgs/image-20261018174130455.png)
+![image-20261018174130455](./assets/image-20261018174130455.png)
 
 
 
@@ -119,9 +119,9 @@ sudo docker run hello-world
 sudo dockerd
 ```
 
-![image-20261018174323730](../../../../../../typoreImgs/image-20261018174323730.png)
+![image-20261018174323730](./assets/image-20261018174323730.png)
 
-![image-20261018174352275](../../../../../../typoreImgs/image-20261018174352275.png)
+![image-20261018174352275](./assets/image-20261018174352275.png)
 
 这是 WSL 2 中非常经典的冲突：**Docker 依赖传统的 `iptables-legacy` 驱动，但 Ubuntu 22.04 默认使用了新的 `nftables` 驱动**，导致 Docker 无法初始化网络并闪退
 
@@ -153,7 +153,7 @@ Plaintext
 
 *Verification:* 运行 `iptables -V`，输出中包含 `(legacy)` 字样（如 `iptables v1.8.7 (legacy)`）。
 
-![image-20261018174626427](../../../../../../typoreImgs/image-20261018174626427.png)
+![image-20261018174626427](./assets/image-20261018174626427.png)
 
 **2.2. 重新启动 Docker 服务：**启动服务。
 
@@ -179,7 +179,7 @@ sudo docker run hello-world
 
 *Verification:* 终端顺利输出 `Hello from Docker!` 说明 Docker 引擎完全正常启动运行。
 
-![image-20261018174754558](../../../../../../typoreImgs/image-20261018174754558.png)
+![image-20261018174754558](./assets/image-20261018174754558.png)
 
 现在 Docker 服务已经正常运行了！当前报错 `dial tcp ... connect: connection refused` 是因为国内网络无法直接连接 Docker 官方默认的镜像仓库（`docker.io`）
 
@@ -207,9 +207,9 @@ EOF
 
 *Verification:* 运行 `cat /etc/docker/daemon.json`，能正确打印出包含 `registry-mirrors` 的文件内容。
 
-![image-20261018175205873](../../../../../../typoreImgs/image-20261018175205873.png)
+![image-20261018175205873](./assets/image-20261018175205873.png)
 
-![image-20261018175254109](../../../../../../typoreImgs/image-20261018175254109.png)
+![image-20261018175254109](./assets/image-20261018175254109.png)
 
 **3.3.2. 重启 Docker 服务加载配置：**
 
@@ -223,7 +223,7 @@ sudo service docker restart
 
 *Verification:* 运行 `sudo service docker status`，显示 `* Docker is running`。
 
-![image-20261018175338650](../../../../../../typoreImgs/image-20261018175338650.png)
+![image-20261018175338650](./assets/image-20261018175338650.png)
 
 **3.3.3. 重新运行 hello-world 测试：**测试。
 
@@ -237,7 +237,7 @@ sudo docker run hello-world
 
 *Verification:* 终端输出 `Hello from Docker! This message shows that your installation appears to be working correctly.` 即代表 Docker 彻底配置成功并可正常使用！
 
-![image-20261018175443276](../../../../../../typoreImgs/image-20261018175443276.png)
+![image-20261018175443276](./assets/image-20261018175443276.png)
 
 **5.5. 配置免 sudo 运行（强烈建议）：**可选配置。
 

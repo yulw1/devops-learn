@@ -1,14 +1,14 @@
 
 
-![image-20261018153608425](../../../../../../typoreImgs/image-20261018153608425.png)
+![image-20261018153608425](./assets/image-20261018153608425.png)
 
-![image-20261018153623929](../../../../../../typoreImgs/image-20261018153623929.png)
+![image-20261018153623929](./assets/image-20261018153623929.png)
 
-勾选上述两个选项后重启电脑，安裝相关内容
+勾选上述两个选项后重启电脑，安裝相关内容 
 
 重启后，可在cmd中运行wsl -l  和 wsl --list --online
 
-![image-20261018153757269](../../../../../../typoreImgs/image-20261018153757269.png)
+![image-20261018153757269](./assets/image-20261018153757269.png)
 
 
 
@@ -22,11 +22,11 @@
 Invoke-WebRequest -Uri https://aka.ms/wslubuntu2204 -OutFile E:\WSL\Ubuntu2204.appx -UseBasicParsing
 ```
 
-![image-20261018154915816](../../../../../../typoreImgs/image-20261018154915816.png)
+![image-20261018154915816](./assets/image-20261018154915816.png)
 
 （我这里报错了，如果没错的可以继续往下看，我采用的另一种下载方式补充在后面）
 
-![image-20261018163215663](../../../../../../typoreImgs/image-20261018163215663.png)
+![image-20261018163215663](./assets/image-20261018163215663.png)
 
 下载完成后，检查 `E:\WSL` 目录下是否存在 `Ubuntu2204.appx` 文件
 
@@ -69,7 +69,7 @@ cd E:\WSL\Ubuntu
 
 迅雷搜索 https://aka.ms/wslubuntu2204 下载
 
-![image-20261018163505389](../../../../../../typoreImgs/image-20261018163505389.png)
+![image-20261018163505389](./assets/image-20261018163505389.png)
 
 下载完成后，
 
@@ -97,7 +97,7 @@ cd E:\WSL\Ubuntu
 
 我运行后，显示有错误，我的系统缺少 WSL 2 所必须的 Linux 内核更新包
 
-![image-20261018163718603](../../../../../../typoreImgs/image-20261018163718603.png)
+![image-20261018163718603](./assets/image-20261018163718603.png)
 
 
 
@@ -117,11 +117,11 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 
 下载完成后，双击运行下载好的 `wsl_update_x64.msi`，一路点击“Next（下一步）”完成安装。
 
-![image-20261018164229740](../../../../../../typoreImgs/image-20261018164229740.png)
+![image-20261018164229740](./assets/image-20261018164229740.png)
 
-![image-20261018164256164](../../../../../../typoreImgs/image-20261018164256164.png)
+![image-20261018164256164](./assets/image-20261018164256164.png)
 
-![image-20261018164306432](../../../../../../typoreImgs/image-20261018164306432.png)
+![image-20261018164306432](./assets/image-20261018164306432.png)
 
 
 
@@ -131,7 +131,7 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 
 返回你的 `E:\WSL\Ubuntu` 文件夹，再次双击 **`ubuntu.exe`**。
 
-![image-20261018164453781](../../../../../../typoreImgs/image-20261018164453781.png)
+![image-20261018164453781](./assets/image-20261018164453781.png)
 
 *Verification:* 此时不会再报错，等待片刻后就会顺利提示你输入 `Enter new UNIX username:`（设置新的用户名），输入用户名和密码后即可正常进入 Linux 系统！
 
@@ -139,4 +139,4 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 
 查看状态和版本
 
-![image-20261018165353144](../../../../../../typoreImgs/image-20261018165353144.png)
+![image-20261018165353144](./assets/image-20261018165353144.png)
